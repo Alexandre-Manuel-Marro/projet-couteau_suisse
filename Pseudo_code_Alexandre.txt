@@ -1,0 +1,16 @@
+Déclaration des variables
+
+FONCTION TransformerEnMorse(mot)
+    POUR CHAQUE lettre DANS mot
+        Switch(lettre)
+            case A:
+                ajoute morse dans une liste
+                break;
+            …
+            case default:
+                écris que la phrase saisie est invalide
+                break;
+    FIN POUR
+FIN FONCTION
+
+écrire l'intégralité de la liste
