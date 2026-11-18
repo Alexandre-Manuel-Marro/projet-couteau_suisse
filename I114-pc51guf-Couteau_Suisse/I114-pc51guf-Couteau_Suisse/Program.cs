@@ -19,6 +19,7 @@ namespace I114_pc51guf_Couteau_Suisse
 
             do
             {
+                Console.WriteLine("Veuillez écrire une phrase pour la transformer en morse. Tout caractère qui n'est pas un nombre ou une lettre sans accents (ou autres truc spécial, ex: ç) deviendra un '?'");
                 user = Console.ReadLine();
                 phraseTransforme = TransformerMorse(user.ToUpper());
                 Console.WriteLine($"{phraseTransforme}");
@@ -145,10 +146,16 @@ namespace I114_pc51guf_Couteau_Suisse
                         phrase += "/";
                         break;
                     default:
+                        phrase += "?";
                         break;
                 }
 
                 phrase += " ";
+            }
+
+            if (phrase == "")
+            {
+                phrase = "Valeur invalide, veuillez réessayer.";
             }
 
             return phrase;
