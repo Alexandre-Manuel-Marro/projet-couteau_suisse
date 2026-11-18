@@ -1,0 +1,69 @@
+déclaration des variables
+
+écrire titre menu
+ecrire choix menu 1
+ecrire choix menu 2
+ecrire choix menu 3
+entrer le choix et lire réponse
+
+switch (reponse)
+	case 1
+		morse();
+		break;
+	case 2
+		ecrire titre fonction
+		ecrire les choix
+		prendre le choix et la valeur de l'user
+		break;
+	case 3
+		ecrire "pas encore disponible"
+		break;
+	default
+		ecrire "valeur invalide"
+		break;
+
+fonction changerbases()
+	i = 0
+	switch (choixuser)
+		case 1 // 10 -> 2
+			while (var1 > 0)
+				var1 = (valeuruser - (valeuruser % 2)) / 2
+				var2 += valeuruser % 2
+			return var2.reverse
+			break;
+		case 2 // 10 -> 8
+			while (var1 > 0)
+				var1 = (valeuruser - (valeuruser % 8)) / 8
+				var2 += valeuruser % 8
+			return var2.reverse
+			break;
+		case 3 // 8  -> 2
+			foreach (number in var3.reverse)
+				var3 += number * math.pow(8, i)
+				i++
+			while (var1 > 0)
+				var1 = (var3 - (var3 % 2)) / 2
+				var2 += var3 % 2
+			return var2.reverse
+			break;
+		case 4 // 8  -> 10
+			foreach (number in valeuruser.reverse)
+				var3 += number * math.pow(8, i)
+				i++
+			return var3
+			break;
+		case 5 // 2  -> 8
+			foreach (number in var3.reverse)
+				var3 += number * math.pow(2, i)
+				i++
+			while (var1 > 0)
+				var1 = (var3 - (var3 % 8)) / 8
+				var2 += var3 % 8
+			return var2.reverse
+			break;
+		case 6 // 2  -> 10
+			foreach (number in valeuruser.reverse)
+				var3 += number * math.pow(2, i)
+				i++
+			return var3
+			break;

@@ -15,14 +15,45 @@ namespace I114_pc51guf_Couteau_Suisse
         static void Main(string[] args)
         {
             string user;
+            string choix;
             string phraseTransforme;
 
             do
             {
-                Console.WriteLine("Veuillez écrire une phrase pour la transformer en morse. Tout caractère qui n'est pas un nombre ou une lettre sans accents (ou autres truc spécial, ex: ç) deviendra un '?'");
-                user = Console.ReadLine();
-                phraseTransforme = TransformerMorse(user.ToUpper());
-                Console.WriteLine($"{phraseTransforme}");
+                Console.WriteLine("==========Couteau_Suisse==========");
+                Console.WriteLine("1. Transformer une phrase en morse.");
+                Console.WriteLine("2. Transformer un chiffre d'une base à une autre.");
+                Console.WriteLine("3. W.I.P");
+                Console.Write("Votre choix: ");
+
+                choix = TryToParse(Console.ReadLine());
+
+                switch (choix)
+                {
+                    case "1":
+                        Console.WriteLine("Veuillez écrire une phrase pour la transformer en morse. Tout caractère qui n'est pas un nombre ou une lettre sans accents (ou autres truc spécial, ex: ç) deviendra un '?'");
+                        user = Console.ReadLine();
+                        phraseTransforme = TransformerMorse(user.ToUpper());
+                        Console.WriteLine($"{phraseTransforme}");
+                        break;
+                    case "2":
+                        Console.WriteLine("==========Choix des bases==========");
+                        Console.WriteLine("1. Décimal à Binaire.");
+                        Console.WriteLine("2. Décimal à Octal.");
+                        Console.WriteLine("3. Octal à Binaire.");
+                        Console.WriteLine("4. Octal à Décimal.");
+                        Console.WriteLine("5. Binaire à Octal.");
+                        Console.WriteLine("6. Binaire à Décimal.");
+                        Console.Write("Votre choix: ");
+                        break;
+                    case "3":
+                        Console.WriteLine("Fonction pas encore ajouté, veuillez réessayer");
+                        break;
+                    default:
+                        Console.WriteLine("Valeur invalide, veuillez réessayer");
+                        break;
+                }
+
             } while (true);
         }
 
@@ -159,6 +190,23 @@ namespace I114_pc51guf_Couteau_Suisse
             }
 
             return phrase;
+        }
+
+        public static string TryToParse(string user)
+        {
+            int nombre;      //Variable entière pour comparer à la valeur donné par l'utilisateur
+
+            //Essaye de déplacer la valeur donnée par l'utilisateur dans un entier
+            bool nbr = Int32.TryParse(user, out nombre);
+
+            //Si la valeur donné par l'utilisateur n'est pas un entier la valeur est mise à -1 pour qu'il n'y aie pas de message d'erreur
+            if (!nbr)
+            {
+                user = "-1";
+            }
+
+            //Retourne la valeur
+            return user;
         }
     }
 }
